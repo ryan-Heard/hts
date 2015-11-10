@@ -10,7 +10,6 @@ def get_refined_image():
 
     return rbg_im
 
-
 def get_morse(im_info):
     last_found = 0
     current = 0
@@ -25,7 +24,7 @@ def get_morse(im_info):
                 last_found = current
 
     ascii_chars = ascii_chars.strip().split(' ')
-    print(ascii_chars)
+
     return ascii_chars
 
 def moorse_ciper(raw,invert):
@@ -61,8 +60,5 @@ def main():
     morse_list = get_morse(im)
 
     print(moorse_ciper(morse_list, True))
-
-    test = ".- / - . ... -".split(' ')
-    print('Test: '+moorse_ciper(test,True))
 
 main()
