@@ -2,9 +2,9 @@
 import sys, os
 from PIL import Image
 
-def get_refined_image():
+def get_refined_image(arg):
     #This is going to take the file and turn it into a workable picture.
-    im = Image.open(sys.argv[1])
+    im = Image.open(arg)
     im.load()
     rbg_im = im.convert('RGB')
 
@@ -56,9 +56,10 @@ def moorse_ciper(raw,invert):
         return translated
 
 def main():
-    im = get_refined_image()
-    morse_list = get_morse(im)
+    for line in sys.argv[1:]:
+        im = get_refined_image(line)
+        morse_list = get_morse(im)
 
-    print(moorse_ciper(morse_list, True))
+        print(moorse_ciper(morse_list, True))
 
 main()
