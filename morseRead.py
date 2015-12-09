@@ -1,4 +1,13 @@
 
+from PIL import Image
+import os
+
+def get_image_info():
+    command =  'cd %HOMEPATH%\Pictures && cd'
+    findFolder = os.popen(command).read().strip()
+    fileFound = findFolder +'/'+'test.jpg' #have this be some kind of raw
+
+
 import sys, os
 from PIL import Image
 
